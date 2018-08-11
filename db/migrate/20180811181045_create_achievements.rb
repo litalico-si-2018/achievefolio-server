@@ -5,6 +5,7 @@ class CreateAchievements < ActiveRecord::Migration[5.2]
     	t.integer :value
     	t.string :description
     	t.string :icon
+      t.boolean :achieved
     	t.boolean :secret
 
       t.timestamps

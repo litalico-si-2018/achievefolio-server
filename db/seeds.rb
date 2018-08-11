@@ -33,7 +33,8 @@ end
 for i in 1..comment_num do
   Comment.create!(
   	body: "投稿#{i}",
-  	user_id: 1,
+    user_id: 1,
+  	post_id: 1,
   )
 end
 

@@ -12,14 +12,16 @@ json.set! :user do
   #   end
   # end
 end
-# json.set! :achievements do
-#   json.array! @comments do |comment|
-#     json.extract! comment, :id, :body, :created_at, :updated_at
-#   end
-# end
-# json.set! :posts do
-#   json.array! @comments do |comment|
-#     json.extract! comment, :id, :body, :created_at, :updated_at
-#   end
-# end
+json.set! :achievements do
+  json.array! @achi do |achi|
+    json.extract! achi, :id, :type, :achieved, :icon, :secret, :description
+  end
+end
+json.set! :posts do
+  json.array! @posts do |post|
+    json.extract! post, :id, :body, :created_at, :updated_at
+    json.array! post.comments do |post|
+    end
+  end
+end
 

@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2018_08_11_181115) do
     t.integer "value"
     t.string "description"
     t.string "icon"
+    t.boolean "achieved"
     t.boolean "secret"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -25,6 +26,7 @@ ActiveRecord::Schema.define(version: 2018_08_11_181115) do
   create_table "comments", force: :cascade do |t|
     t.string "body"
     t.integer "user_id"
+    t.integer "post_id"
     t.integer "type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Api::PagesControllerTest < ActionDispatch::IntegrationTest
+class UserAchievementTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

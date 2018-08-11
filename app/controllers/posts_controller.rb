@@ -1,14 +1,20 @@
 class PostsController < ApplicationController
   def create
-    @post = Post.new
+    @post = @current_user.posts.new
     @post.year = Time.now.year
     @post.month = Time.now.month
     @post.date = Time.now.day
     @post.approved_id = 2
     @post.approved = false
-    @post.user_id = 1
-    @comment = Comment.new(comment_params)
-    @comment.user_id = 1
+
+    @post.save
+
+    @comment = @current_user.comments.new(post_id: @post.id)
+    @comment.body = params[:content]
+
+    @comment.save
+
+    render json: @post
   end
 
   def approve

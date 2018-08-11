@@ -19,8 +19,11 @@ json.set! :achievements do
 end
 json.set! :posts do
   json.array! @posts do |post|
-    json.extract! post, :id, :body, :created_at, :updated_at
-    json.array! post.comments do |post|
+    json.extract! post, :id
+    json.set! :comments do
+      json.array! post.comments do |com|
+        json.aa com.id
+      end
     end
   end
 end

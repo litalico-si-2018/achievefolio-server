@@ -7,8 +7,6 @@ Rails.application.routes.draw do
   post 'posts' => 'posts#create', format: 'json'
   patch 'approved' => 'posts#approved', format: 'json'
 
-  post 'comments' => 'comments#create', format: 'json'
-
   post 'achieved' => 'achievements#create', format: 'json'
 
 end

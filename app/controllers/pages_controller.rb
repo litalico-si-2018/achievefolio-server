@@ -10,7 +10,7 @@ class PagesController < ApplicationController
         year: d.year,
         month: d.month,
         date: d.date,
-        count: @user.posts.where(year: d.year).where(month: d.month).where(date: d.date).length
+        count: @user.posts.where(approved: true).where(year: d.year).where(month: d.month).where(date: d.date).length
       }
     end
     @drops = drops.uniq

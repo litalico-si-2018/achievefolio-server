@@ -9,11 +9,6 @@ class PostsController < ApplicationController
 
     @post.save
 
-    @comment = @current_user.comments.new(post_id: @post.id)
-    @comment.body = params[:content]
-
-    @comment.save
-
     achieves = []
     Achievement.where(type: 0).each do |a|
       next if UserAchievement.find_by(user_id: @current_user.id, achievement_id: a.id) # nil or Achievement
@@ -44,9 +39,6 @@ class PostsController < ApplicationController
     
   end
   private
-    def comment_params
-      params.fetch(:comment, {}).permit(:body, :type)
-    end
     def post_params
       params.fetch(:post, {}).permit(:approved)
     end

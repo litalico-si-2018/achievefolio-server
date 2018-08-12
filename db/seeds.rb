@@ -1,19 +1,14 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 
-
-
-user_num = 3
-post_num = 3
-comment_num = 3
-achievement_num = 3
-user_achievement_num = 3
-
+User.create(
+  name: "山田",
+  icon: "yamada.jpg",
+  role: "general"
+)
+User.create(
+  name: "山本",
+  icon: "yamamoto.jpg",
+  role: "admin"
+)
 
 for i in 1..user_num do
   User.create!(name: "ユーザー#{i}", role: i%2)
@@ -38,18 +33,9 @@ for i in 1..user_num do
   end
 end
 
-
-
 for i in 1..achievement_num do
   Achievement.create!(
       value: 1,
       status: 0
   	)
 end
-
-for i in 1..user_achievement_num do
-  UserAchievement.create!(
-  	  user_id: 1
-  	)
-end
-

@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   get 'pages/mypage' => 'pages#mypage', format: 'json'
   get 'pages/users' => 'pages#users', format: 'json'
 
+  get 'posts' => 'posts#index', format: 'json'
   post 'posts' => 'posts#create', format: 'json'
-  patch 'approve' => 'posts#approve', format: 'json'
+  patch 'approved' => 'posts#approved', format: 'json'
 
   post 'comments' => 'comments#create', format: 'json'
 

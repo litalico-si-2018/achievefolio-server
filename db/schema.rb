@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2018_08_11_181115) do
 
   create_table "achievements", force: :cascade do |t|
-    t.integer "type"
+    t.integer "status"
     t.integer "value"
     t.string "description"
     t.string "icon"
@@ -27,13 +27,14 @@ ActiveRecord::Schema.define(version: 2018_08_11_181115) do
     t.string "body"
     t.integer "user_id"
     t.integer "post_id"
-    t.integer "type"
+    t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "posts", force: :cascade do |t|
     t.integer "user_id"
+    t.string "body"
     t.integer "year"
     t.integer "month"
     t.integer "date"

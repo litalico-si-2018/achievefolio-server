@@ -5,7 +5,7 @@ class PagesController < ApplicationController
     @posts = @user.posts
 
     drops = []
-    @user.posts.each do |d|
+    @user.posts.where(approved: true).each do |d|
       drops << {
         year: d.year,
         month: d.month,

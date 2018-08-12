@@ -10,25 +10,26 @@ User.create(
   role: "admin"
 )
 
-Achievement.create(
-  status: "sequence_post",
-  description: "30文字以上の投稿を一回する",
-  achieved: false,
-  secret: false
-)
-Achievement.create(
-  status: "daily_post_count",
-  description: "一日に3回投稿する",
-  achieved: false,
-  secret: false
-)
-Achievement.create(
-  status: "sequence_post",
-  description: "7日連続で投稿する",
-  achieved: false,
-  secret: false
-)
-
+for i in 1..4
+	Achievement.create(
+	  status: "sequence_post",
+	  description: "#{30*i}文字以上の投稿を一回する",
+	  achieved: false,
+	  secret: false
+	)
+	Achievement.create(
+	  status: "daily_post_count",
+	  description: "一日に#{3*i}回投稿する",
+	  achieved: false,
+	  secret: false
+	)
+	Achievement.create(
+	  status: "sequence_post",
+	  description: "#{7*i}日連続で投稿する",
+	  achieved: false,
+	  secret: false
+	)
+end
 
 Post.create(
   user_id: 1,

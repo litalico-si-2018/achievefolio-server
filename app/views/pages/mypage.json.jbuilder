@@ -16,7 +16,7 @@ json.set! :achievements do
 end
 json.set! :posts do
   json.array! @posts do |post|
-    json.extract! post, :id
+    json.extract! post, :id, :body
     json.approved post.approved
     json.mine post.id == @current_user.id
   end

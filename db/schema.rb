@@ -23,15 +23,6 @@ ActiveRecord::Schema.define(version: 2018_08_11_181115) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "comments", force: :cascade do |t|
-    t.string "body"
-    t.integer "user_id"
-    t.integer "post_id"
-    t.integer "status"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "posts", force: :cascade do |t|
     t.integer "user_id"
     t.string "body"

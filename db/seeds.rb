@@ -27,14 +27,6 @@ for i in 1..user_num do
       month: 7,
       date: 5
     )
-    for k in 1..comment_num do
-      Comment.create!(
-        body: "投稿",
-        user_id: i,
-        post_id: j,
-        status: 0
-      )
-    end
   end
 end
 

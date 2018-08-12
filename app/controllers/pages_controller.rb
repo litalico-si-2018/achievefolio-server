@@ -4,9 +4,9 @@ class PagesController < ApplicationController
     @achi = Achievement.all
     @posts = @user.posts
 
-    =@user.posts[0].year
-    tmp[1]=@user.posts[0].month
-    tmp[2]=@user.posts[0].date
+    # =@user.posts[0].year
+    # tmp[1]=@user.posts[0].month
+    # tmp[2]=@user.posts[0].date
 
   end
   def users

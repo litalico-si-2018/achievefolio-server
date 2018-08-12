@@ -4,12 +4,20 @@ class PagesController < ApplicationController
     @achi = Achievement.all
     @posts = @user.posts
 
+    # @drops = []
+    # @user.posts.each do |d|
+    #   if @drops.where(year: d.year).where(month: ) then
+
+    #   end
+    # end
+
+
     # =@user.posts[0].year
     # tmp[1]=@user.posts[0].month
     # tmp[2]=@user.posts[0].date
 
   end
   def users
-    @comments = Comment.all.order('updated_at DESC')
+    @users = User.all
   end
 end

@@ -20,6 +20,7 @@ for i in 1..user_num do
   for j in 1..post_num do
     Post.create!(
       user_id: i,
+      body: "aaa",
       approved_id: 2,
       approved: false,
       year: 2018,
@@ -31,6 +32,7 @@ for i in 1..user_num do
         body: "投稿",
         user_id: i,
         post_id: j,
+        status: 0
       )
     end
   end
@@ -40,7 +42,8 @@ end
 
 for i in 1..achievement_num do
   Achievement.create!(
-  	  value: 1
+      value: 1,
+      status: 0
   	)
 end
 

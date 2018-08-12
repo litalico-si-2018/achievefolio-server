@@ -3,13 +3,10 @@ json.set! :user do
   json.name @user.name
   json.icon @user.icon
   json.role @user.role
-  year = 0
-  month = 0
-  date = 0
-  json.set! :drops do
-    json.array! @drops do |d|
-      json.extract! d, :count, :year, :month, :date
-    end
+end
+json.set! :drops do
+  json.array! @drops do |d|
+    json.extract! d, :count, :year, :month, :date
   end
 end
 json.set! :achievements do

@@ -38,7 +38,7 @@ class PostsController < ApplicationController
   def approved
     @post = Post.find(params[:post_id])
     @post.approved = true
-    @post.update(post_params)
+    @post.save
 
     render json: @post
   end
